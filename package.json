@@ -9,7 +9,10 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "start": "set NODE_ENV=production&& node index.js",
+    "start": "cross-env-shell NODE_ENV=production \" node index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   }
 }
