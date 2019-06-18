@@ -1,1 +1,2 @@
-# squash-url-service
+# squash-url-service 
+[![Build status](https://dev.azure.com/pareenvatani/squash-url-service/_apis/build/status/squash-url-service%20-%201%20-%20CI)](https://dev.azure.com/pareenvatani/squash-url-service/_build/latest?definitionId=1)

@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "set NODE_ENV=production&& node index.js",   
+    "docker:build":"docker build -t pareenvatani/squash-url-service .",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
