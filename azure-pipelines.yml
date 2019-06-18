@@ -16,4 +16,4 @@ steps:
     containerRegistry: 'docker hub'
     repository: 'pareenvatani/squash-url-service'
     command: 'buildAndPush'
-    Dockerfile: '/dockerfile'
+    Dockerfile: 'dockerfile'
