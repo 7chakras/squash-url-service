@@ -1,0 +1,15 @@
+{
+  "name": "squash-url-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/7chakras/squash-url-service.git",
+  "author": "pareenvatani <pareenvatani@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "set NODE_ENV=production&& node index.js",   
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
