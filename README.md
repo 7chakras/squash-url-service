@@ -38,9 +38,10 @@ https://dev.azure.com/7chakras/squash-url-service/_release?view=mine&definitionI
 2. Option 2
 
    Step 1
-
-   curl -X POST "https://squash-url-service.azurewebsites.net/api/squash-url" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"url\": \"http://www.bit.ly\"}"
-
+   
+```
+curl -X POST "https://squash-url-service.azurewebsites.net/api/squash-url" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"url\": \"http://www.bit.ly\"}"
+```
    Expected response
 
 ```json
