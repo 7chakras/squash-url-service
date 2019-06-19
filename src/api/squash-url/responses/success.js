@@ -1,8 +1,8 @@
 const BaseResponse = require('../../../common/responses/baseResponse');
 
 class SuccessResponse extends BaseResponse {
-  constructor(url, token, squashedUrl) {
-    super({ url, token, squashedUrl });
+  constructor(url, squashedUrl) {
+    super({ url, squashedUrl });
   }
 }
 
