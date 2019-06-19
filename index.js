@@ -1,9 +1,17 @@
-const express = require("express");
-const app = express();
-const port = process.env.PORT || 1337;
-app.get("/", (req, res) => res.send(process.env));
-app.get("/test", (req, res) => res.send('test'+process.env.NODE_ENV));
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-app.listen(port, (req, res) => {
-  console.log(`Example app listening on port ${port} ${process.env.NODE_ENV}!`);
-});
+const app = express();
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+app.use(require('./src/core/middlewares/requestInterceptor'));
+app.use('/api', require('./src/api/squash-url/route'));
+app.use(require('./src/api/redirection/route'));
+// app.use(require('./src/core/error/not-found'));
+
+module.exports = app;
