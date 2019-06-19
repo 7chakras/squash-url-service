@@ -1,13 +1,13 @@
-const validUrl = require("valid-url");
+const validUrl = require('valid-url');
 
-const resourceStrings = require("../../common/resourceStrings");
-const appConfig = require("../../core/configs/app-config");
+const resourceStrings = require('../../common/resourceStrings');
+const appConfig = require('../../core/configs/app-config');
 
-const { business } = require("./business");
-const RequestParams = require("./params/request");
-const SuccessResponse = require("./responses/success");
-const BadRequestResponse = require("../../common/responses/badRequest");
-const InternalServerErrorResponse = require("../../common/responses/internalServerError");
+const { business } = require('./business');
+const RequestParams = require('./params/request');
+const SuccessResponse = require('./responses/success');
+const BadRequestResponse = require('../../common/responses/badRequest');
+const InternalServerErrorResponse = require('../../common/responses/internalServerError');
 
 function SquashUrlController() {
   function post(req, res) {
@@ -18,7 +18,7 @@ function SquashUrlController() {
       if (requestBody.url == null) {
         res.status(400);
         return res.send(
-          new BadRequestResponse({ message: resourceStrings.INVALID_INPUT })
+          new BadRequestResponse({ message: resourceStrings.INVALID_INPUT }),
         );
       }
 
@@ -26,7 +26,7 @@ function SquashUrlController() {
       if (!validUrl.isUri(requestBody.url)) {
         res.status(400);
         return res.send(
-          new BadRequestResponse({ message: resourceStrings.INVALID_URL })
+          new BadRequestResponse({ message: resourceStrings.INVALID_URL }),
         );
       }
 
@@ -43,12 +43,12 @@ function SquashUrlController() {
     } catch (err) {
       return res.status(500).send(
         new InternalServerErrorResponse({
-          message: resourceStrings.SERVER_ERROR
-        })
+          message: resourceStrings.SERVER_ERROR,
+        }),
       );
     }
   }
-  return { post: post };
+  return { post };
 }
 
 module.exports = SquashUrlController;
