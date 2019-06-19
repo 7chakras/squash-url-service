@@ -12,7 +12,6 @@ function retrieveAll() {
 
 function findByToken(token) {
   const record = db.find(item => item.token === token);
-
   return record;
 }
 

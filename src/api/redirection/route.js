@@ -1,6 +1,8 @@
 const route = require('express').Router();
 const redirectionController = require('./controller');
 
-route.get('/:hash', redirectionController);
+const controller = redirectionController();
+
+route.get('/:hash', controller.get);
 
 module.exports = route;

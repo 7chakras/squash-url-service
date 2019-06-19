@@ -1,6 +1,8 @@
 const route = require('express').Router();
 const squashUrlController = require('./controller');
 
-route.post('/squash-url', squashUrlController);
+const controller = squashUrlController();
+
+route.post('/squash-url', controller.post);
 
 module.exports = route;

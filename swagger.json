@@ -1,0 +1,99 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "this service squashes urls",
+      "version": "1.0.0",
+      "title": "Squash Url Service",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+        "email": "pareenvatani@hotmail.com"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "squash-url-service.azurewebsites.net",
+    "basePath": "/api",
+    "schemes": [
+      "https"
+    ],
+    "paths": {
+      "/squash-url": {
+        "post": {
+          "tags": [
+            "Squash"
+          ],
+          "summary": "Squashes a big url",
+          "description": "",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "url that needs to be squashed",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Request"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "$ref": "#/definitions/Response"
+              }
+            },
+            "400": {
+              "description": "missing url in body or invalid url",
+              "schema": {
+                "$ref": "#/definitions/ErrorResponse"
+              }
+            },
+            "500": {
+              "description": "internal server error",
+              "schema": {
+                "$ref": "#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Request": {
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "url to be squashed",
+            "example": "http://www.bit.ly"
+          }
+        }
+      },
+      "Response": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "squashedUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
