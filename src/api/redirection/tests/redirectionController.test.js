@@ -1,3 +1,5 @@
+/* eslint-disable */
+const should = require('should');
 const sinon = require('sinon');
 const RedirectionController = require('../controller');
 const { business } = require('../business');

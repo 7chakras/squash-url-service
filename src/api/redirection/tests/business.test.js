@@ -1,5 +1,6 @@
+/* eslint-disable */
+const should = require('should');
 const assert = require('assert');
-
 const sinon = require('sinon');
 const { inMemoryStore } = require('../../../utils/in-memory-store');
 const { business } = require('../business');
